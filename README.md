@@ -1,7 +1,7 @@
 # coordtransform-cli
 A  CLI version for coordtransform module.
 
-# CLI Usage
+### CLI Usage
 
 `npm install -g coordtransform-cli`
 
@@ -17,7 +17,7 @@ Examples:
   coordtransform -t bd09togcj02  input.geojson output.geojson
 ```
 
-# Node or browser Usage
+### Node or browser Usage
 `npm install coordtransform-cli`
 
 ```
