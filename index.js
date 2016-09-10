@@ -76,6 +76,3 @@ function transformGeoJSON(originGeoJSON, type) {
 }
 
 module.exports = transformGeoJSON;
-// var point = { type: 'Point', coordinates: [118, 34] };
-// var result = transformGeoJSON(point, 'wgs84togcj02');
-// console.log(result);

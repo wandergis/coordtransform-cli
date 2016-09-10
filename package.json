@@ -1,6 +1,6 @@
 {
   "name": "coordtransform-cli",
-  "version": "0.0.1",
+  "version": "0.0.12",
   "description": "A CLI version for coordtransform module.",
   "main": "index.js",
   "scripts": {
@@ -11,7 +11,7 @@
     "url": "git+https://github.com/wandergis/coordtransform-cli.git"
   },
   "bin": {
-    "coordtransform": "coordtransform"
+    "coordtransform": "bin/coordtransform"
   },
   "keywords": [
     "coordtransform",
