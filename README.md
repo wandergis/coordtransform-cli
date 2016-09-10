@@ -3,6 +3,8 @@ A  CLI version for coordtransform module.
 
 # CLI Usage
 
+`npm install -g coordtransform-cli`
+
 ```
 Usage: coordtransform -t typename input output
 
@@ -16,6 +18,7 @@ Examples:
 ```
 
 # Node or browser Usage
+`npm install coordtransform-cli`
 
 ```
 var transformGeoJSON = require('coordtransform-cli');
