@@ -1,0 +1,29 @@
+#!/usr/bin/env node
+
+var yargs = require('yargs');
+var fs = require('fs');
+var transformGeoJSON = require('../index.js');
+argv = yargs.option('t', {
+    alias: 'type',
+    demand: true,
+    describe: "transform type.",
+    type: 'string'
+  })
+  .choices('t', ['bd09togcj02', 'gcj02tobd09', 'wgs84togcj02', 'gcj02towgs84'])
+  .usage('Usage: coordtransform -t typename input output')
+  .example('coordtransform -t bd09togcj02', 'input.geojson output.geojson')
+  .help('h')
+  .alias('h', 'help')
+  .locale('en')
+  .argv;
+var type = argv.t;
+var input = argv._[0];
+var output = argv._[1] || './output.geojson';
+if (type && input) {
+  var originGeoJSON = JSON.parse(fs.readFileSync(input));
+  var result = transformGeoJSON(originGeoJSON, type);
+  fs.writeFileSync(output, JSON.stringify(result));
+  console.log('Transform finished!');
+} else {
+  console.error('Input not specified')
+}

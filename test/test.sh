@@ -1,0 +1,1 @@
+../bin/coordtransform -t wgs84togcj02 data.geojson output.geojson
