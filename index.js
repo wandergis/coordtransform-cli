@@ -63,13 +63,14 @@ function coordEach(layer, callback, excludeWrapCoord) {
  */
 function transformGeoJSON(originGeoJSON, type) {
   var types = ['bd09togcj02', 'gcj02tobd09', 'wgs84togcj02', 'gcj02towgs84'];
+  var originGeoJSON_clone = JSON.parse(JSON.stringify(originGeoJSON));
   if (types.indexOf(type) !== -1) {
-    coordEach(originGeoJSON, function(coord) {
+    coordEach(originGeoJSON_clone, function(coord) {
       var after_coord = coordtransform[type](coord[0], coord[1]);
       coord[0] = +after_coord[0].toFixed(6);
       coord[1] = +after_coord[1].toFixed(6);
     });
-    return originGeoJSON;
+    return originGeoJSON_clone;
   } else {
     throw Error("type shoule be one of ['bd09togcj02', 'gcj02tobd09', 'wgs84togcj02', 'gcj02towgs84']");
   }

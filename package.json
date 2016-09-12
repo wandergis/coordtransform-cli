@@ -1,10 +1,10 @@
 {
   "name": "coordtransform-cli",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "A CLI version for coordtransform module.",
   "main": "index.js",
   "scripts": {
-    "test": "npm run test"
+    "test": "node test/test.js"
   },
   "repository": {
     "type": "git",
